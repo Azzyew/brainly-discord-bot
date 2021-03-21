@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "brainly-api": "^0.0.39",
+    "discord.js": "^12.5.1"
+  }
+}
