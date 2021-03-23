@@ -8,6 +8,7 @@ module.exports = {
     ?b <pergunta> - Pesquisa uma questão no Brainly \n
     ?vtnc - Manda o biroliro tomar no c* \n
     ?fofoca - pergunta pro Fábio qual a fofoca do dia \n
-    ?mimir - Responde com a foto de um travesseiro`);
+    ?mimir - A mimir \n
+    ?japa - Japa cama`);
 	},
 };
