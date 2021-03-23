@@ -1,8 +1,14 @@
-const app = require('../util/app.json');
+const fs = require('fs');
+
+function app() {
+fs.readFile('../util/app.json', (err, data) => {
+  return data;
+});
+}
 
 module.exports = {
   name: "vtnc",
-  description: app.__('vtnc.description'),
+  description: app('vtnc.description'),
   execute(message) {
     return message.channel
       .send(

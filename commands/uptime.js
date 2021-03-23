@@ -1,9 +1,15 @@
-const app = require('../util/app.json');
+const fs = require('fs');
+
+function app() {
+fs.readFile('../util/app.json', (err, data) => {
+  return data;
+});
+}
 
 module.exports = {
   name: "uptime",
   aliases: ["u"],
-  description: app.__('uptime.description'),
+  description: app('uptime.description'),
   execute(message) {
     let seconds = Math.floor(message.client.uptime / 1000);
     let minutes = Math.floor(seconds / 60);
@@ -15,7 +21,7 @@ module.exports = {
     hours %= 24;
 
     return message
-      .reply(app.__mf('uptime.result', {days: days, hours: hours, minutes: minutes, seconds: seconds}))
+      .reply(app('uptime.result', {days: days, hours: hours, minutes: minutes, seconds: seconds}))
       .catch(console.error);
   }
 };

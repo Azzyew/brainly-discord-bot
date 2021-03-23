@@ -1,23 +1,22 @@
 const { MessageEmbed } = require("discord.js");
-const app = require('../util/app.json');
+const fs = require('fs');
 
-// const fs = require("fs");
-// fs.readFile("../util/app.json", (err, data) => {
-//     if (err) throw err;
-//     let app = JSON.parse(data);
-//     console.log(app);
-// });
+function app() {
+fs.readFile('../util/app.json', (err, data) => {
+  return data;
+});
+}
 
 module.exports = {
     name: "help",
     aliases: ["h"],
-    description: app._("help.description"),
+    description: app("help.description"),
     execute(message) {
       let commands = message.client.commands.array();
   
       let helpEmbed = new MessageEmbed()
-        .setTitle(app.__mf("help.embedTitle", { botname: message.client.user.username }))
-        .setDescription(app.__("help.embedDescription"))
+        .setTitle(app("help.embedTitle", { botname: message.client.user.username }))
+        .setDescription(app("help.embedDescription"))
         .setColor("#9370DB");
   
       commands.forEach((cmd) => {
