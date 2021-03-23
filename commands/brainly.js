@@ -1,25 +1,23 @@
 const { BrainlyAPI, Server } = require('brainly-api');
 
 module.exports = {
-    name: "brainly",
+    name: "b",
     description: "brainly",
     async execute(message) {
-      const { question } = message.member;
+      if(message.content[0] === '?' && message.content[1] === 'b') {
+        let question = message.content.substring(message.content.indexOf(" ") + 1, message.content.length);
+        console.log(question);
+        BrainlyAPI.startWorker({ experimental: true, server: Server.PT }, async brainly => {
+          const resp = await brainly.findQuestion(question);
+          
+          message.channel.send('**Questão:** \n');
+          message.channel.send(resp.raw[0].data.questionSearch.edges[0].node.content);
+          message.channel.send('**Resposta:** \n');
+          message.channel.send(resp.raw[0].data.questionSearch.edges[0].node.answers.nodes[0].content);
+        });
+      } else {
+        message.channel.send('Ops! Não consegui achar nada...');
+      }
 
-      BrainlyAPI.startWorker({ experimental: true, server: Server.PT }, async brainly => {
-        const resp = await brainly.findQuestion(question);
-      });
-        try {
-          https.get(url, function (res) {
-            if (res.statusCode == "302") {
-              return message.client.commands.get("brainly").execute(message, [res.headers.location]);
-            } else {
-              return message.reply("No content could be found at that url.").catch(console.error);
-            }
-          });
-        } catch (error) {
-          console.error(error);
-          return message.reply(error.message).catch(console.error);
-        }
     }
   };
