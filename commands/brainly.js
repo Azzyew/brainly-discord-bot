@@ -7,7 +7,7 @@ module.exports = {
       const { question } = message.member;
 
       BrainlyAPI.startWorker({ experimental: true, server: Server.PT }, async brainly => {
-        const resp = await brainly.findQuestion({question});
+        const resp = await brainly.findQuestion(question);
       });
         try {
           https.get(url, function (res) {

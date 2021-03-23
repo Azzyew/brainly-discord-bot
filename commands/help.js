@@ -1,34 +1,13 @@
-const { MessageEmbed } = require("discord.js");
-const fs = require('fs');
-
-function app() {
-fs.readFile('../util/app.json', (err, data) => {
-  return data;
-});
-}
-
 module.exports = {
-    name: "help",
-    aliases: ["h"],
-    description: app("help.description"),
-    execute(message) {
-      let commands = message.client.commands.array();
-  
-      let helpEmbed = new MessageEmbed()
-        .setTitle(app("help.embedTitle", { botname: message.client.user.username }))
-        .setDescription(app("help.embedDescription"))
-        .setColor("#9370DB");
-  
-      commands.forEach((cmd) => {
-        helpEmbed.addField(
-          `**${message.client.prefix}${cmd.name} ${cmd.aliases ? `(${cmd.aliases})` : ""}**`,
-          `${cmd.description}`,
-          true
-        );
-      });
-  
-      helpEmbed.setTimestamp();
-  
-      return message.channel.send(helpEmbed).catch(console.error);
-    }
-  };
+	name: 'help',
+	description: 'comandos',
+	execute(message) {
+		message.channel.send(`
+    !! COMANDOS !! \n
+    ?help - Mostra todos os comandos \n
+    ?vtnc - Manda o biroliro tomar no c* \n
+    ?fofoca - pergunta pro Fábio qual a fofoca do dia \n
+    ?mimir - Responde com a foto de um travesseiro \n
+    ?brainly <pergunta> - Pesquisa uma questão no Brainly (não funciona ainda)`);
+	},
+};
