@@ -1,0 +1,28 @@
+{
+    "brainly": {
+      "description": "Pesquisa uma questão no Brainly.",
+      "usagesReply": "Uso: ?b <questão>"
+    },
+    "calc": {
+      "description": "Pesquisa a resolução de uma equação."
+    },
+    "help": {
+      "description": "Mostra todos os comandos e descrições.",
+      "embedTitle": "{botname} Ajuda",
+      "embedDescription": "Lista de todos os comandos."
+    },
+    "fofoca": {
+      "description": "Chama o Fábio pra saber das fofocas.",
+      "result": "@fabio"
+    },
+    "mimir": {
+      "description": "Envia uma foto de travesseiro."
+    },
+    "vtnc": {
+      "description": "Manda o biroliro tomar no c*."
+    },
+    "uptime": {
+      "description": "Verifica o tempo ativo do bot.",
+      "result": "Tempo online: `{days} dia(s),{hours} hora(s), {minutes} minuto(s), {seconds} segundo(s)`"
+    }
+}

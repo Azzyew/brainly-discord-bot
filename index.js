@@ -1,16 +1,11 @@
-const Discord = require('discord.js');
+const { Client, Collection } = require("discord.js");
 const { TOKEN, PREFIX, LOCALE } = require("./util/brainly-bot.js");
 
-
-const client = new Discord.Client();
+const client = new Client();
 
 client.login(TOKEN);
 client.commands = new Collection();
 client.prefix = PREFIX;
-
-client.on('ready', () => {
-  console.log('I am ready!');
-});
 
 /**
  * Client Events

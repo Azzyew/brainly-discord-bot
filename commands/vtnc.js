@@ -1,8 +1,13 @@
-const Discord = require('discord.js');
+const app = require('../util/app.json');
 
-// Create an event listener for messages
-client.on('message', message => {
-  if (message.content === '?vtnc') {
-    message.channel.send('VAI TOMAR NO CU, BOLSONARO');
+module.exports = {
+  name: "vtnc",
+  description: app.__('vtnc.description'),
+  execute(message) {
+    return message.channel
+      .send(
+        `VAI TOMAR NO CU, BOLSONARO!`
+      )
+      .catch(console.error);
   }
-});
+};
