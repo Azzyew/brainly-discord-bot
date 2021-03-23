@@ -23,6 +23,12 @@ client.on("ready", () => {
 client.on("warn", (info) => console.log(info));
 client.on("error", console.error);
 
+client.on('message', msg => {
+  if (msg.content === '?vtnc') {
+  msg.send('VAI TOMAR NO CU, BOLSONARO');
+  }
+  });
+
 /**
  * Import all commands
  */

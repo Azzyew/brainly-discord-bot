@@ -1,19 +1,7 @@
-const fs = require('fs');
-
-function app() {
-fs.readFile('../util/app.json', (err, data) => {
-  return data;
-});
-}
-
 module.exports = {
   name: "fofoca",
-  description: app('fofoca.description'),
+  description: "fofoca",
   execute(message) {
-    return message.channel
-      .send(
-        `@Fabio202 qual a fofoca do dia?`
-      )
-      .catch(console.error);
+    return message.channel.send("@Fabio202 qual a fofoca do dia?");
   }
 };

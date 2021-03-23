@@ -1,19 +1,8 @@
 const { BrainlyAPI, Server } = require('brainly-api');
-const fs = require('fs');
-
-function app() {
-fs.readFile('../util/app.json', (err, data) => {
-  return data;
-});
-}
-
-// const app = require('../util/app.json');
 
 module.exports = {
     name: "brainly",
-    cooldown: 3,
-    aliases: ["b"],
-    description: app("brainly.description"),
+    description: "brainly",
     async execute(message) {
       const { question } = message.member;
 
