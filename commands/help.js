@@ -9,6 +9,7 @@ module.exports = {
     ?vtnc - Manda o biroliro tomar no c* \n
     ?fofoca - pergunta pro Fábio qual a fofoca do dia \n
     ?mimir - A mimir \n
-    ?japa - Japa cama`);
+    ?japa - Japa cama \n
+    ?elogio - Gera elogio aleatório`);
 	},
 };
