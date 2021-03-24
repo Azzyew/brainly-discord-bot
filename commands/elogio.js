@@ -5,6 +5,6 @@ module.exports = {
 	description: 'elogio aleatório',
 	execute(message) {
         const random = listaElogios.elogios[Math.floor(Math.random() * listaElogios.elogios.length)];
-		message.channel.send(`${message.author},`, random);
+		message.channel.send(`${message.author}: ` + random);
 	},
 };
