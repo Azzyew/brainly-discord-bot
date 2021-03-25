@@ -17,7 +17,7 @@ for (const file of commandFiles) {
 
 client.once('ready', () => {
 	console.log('Ready!');
-  client.user.setActivity(`os cornos da INFO`, { type: "LISTENING" });
+  client.user.setActivity(`?help`, { type: "LISTENING" });
 });
 
 client.on('message', message => {
@@ -32,7 +32,7 @@ client.on('message', message => {
 		client.commands.get(command).execute(message, args);
 	} catch (error) {
 		console.error(error);
-		message.reply('there was an error trying to execute that command!');
+		message.reply('Houve um erro :c');
 	}
 });
 
