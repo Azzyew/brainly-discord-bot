@@ -5,6 +5,14 @@ module.exports = {
 	description: 'elogio aleatório',
 	execute(message) {
         const random = listaElogios.elogios[Math.floor(Math.random() * listaElogios.elogios.length)];
-		message.channel.send(`${message.author}: ` + random);
+		const person = message.content.substring(message.content.indexOf(" "), message.content.length);
+
+		console.log(message.content);
+		if (message.content === "?elogio") {
+			message.channel.send(`${message.author}: ` + random);
+		} else {
+			message.channel.send(`${person} você é ` + random);
+
+		}
 	},
 };

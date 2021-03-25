@@ -10,6 +10,6 @@ module.exports = {
     ?fofoca - pergunta pro Fábio qual a fofoca do dia \n
     ?mimir - A mimir \n
     ?japa - Japa cama \n
-    ?elogio - Gera elogio aleatório`);
+    ?elogio - Gera elogio aleatório ou marca alguém`);
 	},
 };
