@@ -12,5 +12,5 @@ module.exports = {
     ?mimir - A mimir \n
     ?japa - Japa cama \n
     ?elogio - Gera elogio aleatório ou marca alguém`);
-	},
+	}
 };
